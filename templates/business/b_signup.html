@@ -1,0 +1,39 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+<title>Sign Up</title>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+<style>
+    select {
+        width: 100%;
+    }
+</style>
+{% endblock %}
+
+{% include "business/b_navbar.html" %}
+
+{% block content %}
+<div class="container">
+    <br><br>
+    <form class="form-signin" method="POST" action="#">
+<!--        <h3 class="form-signin-heading">Sign Up</h3><br>-->
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.companyName) }}
+        {{ wtf.form_field(form.managerName) }}
+        <div class="form-group required">
+            <label class="control-label" for="businessType">Business Type</label>
+            <select class="form-control form-control-lg" id="businessType" name="businessType">
+                {% for type in businessTypes %}
+                <option value='{{ type[0] }}'> {{ type[0] }} </option>
+                {% endfor %}
+            </select>
+        </div>
+        {{ wtf.form_field(form.password) }}
+        {{ wtf.form_field(form.confirm_password) }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+    </form>
+</div>
+{% endblock %}

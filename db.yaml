@@ -1,0 +1,4 @@
+mysql_host: 'localhost'
+mysql_user: 'rogg'
+mysql_pwd: 'rogg'
+mysql_db: 'localfoods'

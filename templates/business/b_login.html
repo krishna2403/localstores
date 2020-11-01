@@ -1,0 +1,24 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+{% endblock %}
+
+{% include "business/b_navbar.html" %}
+
+{% block content %}
+    <br><br>
+    <div class="container">
+        <form class="form-signin" method="POST" action="#">
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.companyName) }}
+            {{ wtf.form_field(form.password) }}
+            {{ wtf.form_field(form.remember) }}
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% block title %}
+<title>Local Heroes</title>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
+{% include "business/b_navbar.html" %}
+
+{% block content %}
+    <br><br><br><br><br><br><br><br>
+    <div class="container">
+      <div class="starter-template">
+        <h1>Local Heroes for Businesses</h1>
+      </div>
+    </div>
+{% endblock %}

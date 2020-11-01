@@ -1,0 +1,29 @@
+{% block title %}
+<title>Local Heroes</title>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
+{% include "navbar.html" %}
+
+{% block content %}
+    <br><br><br><br><br><br>
+    <div class="container">
+      <div class="starter-template">
+        <h1>Local Heroes</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="starter-template">
+        <span class="user-type">
+            <a href="business"><button class="btn btn-success user-type-btn" type="button"><h3 class="no-pad">Business</h3></button></a>
+        </span>
+        <span class="user-type">
+            <a href="user"><button class="btn btn-success user-type-btn" type="button"><h3 class="no-pad">Customer</h3></button></a>
+        </span>
+      </div>
+    </div>
+{% endblock %}
